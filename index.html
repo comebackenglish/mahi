@@ -108,7 +108,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background-size: 200px;
     }
 
-    .ambient-glow { position: fixed; z-index: -1; filter: blur(90px); opacity: 0.4; pointer-events: none; }
+    /* UPDATED: Increased base opacity for better visibility */
+    .ambient-glow { position: fixed; z-index: -1; filter: blur(90px); opacity: 0.6; pointer-events: none; }
     
     .glow-1 { 
         top: -10%; right: -10%; width: 60vw; height: 60vw; 
@@ -121,7 +122,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background: radial-gradient(circle, #001020, transparent); 
     }
 
-    @keyframes pulse { 0% { opacity: 0.3; } 100% { opacity: 0.5; } }
+    /* UPDATED: Adjusted animation range for warmer feel */
+    @keyframes pulse { 0% { opacity: 0.5; } 100% { opacity: 0.8; } }
 
     /* =========================================
        HEADER LOGO STYLES
@@ -268,7 +270,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .bio-text { 
-        color: #94a3b8; font-size: 1rem; line-height: 1.6; 
+        /* UPDATED: Lighter shade for better contrast on dark bg */
+        color: #cbd5e1; 
+        font-size: 1rem; line-height: 1.6; 
         max-width: 95%; margin: 0 auto; 
     }
 
@@ -555,5 +559,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </main>
 </body>
-
 </html>
