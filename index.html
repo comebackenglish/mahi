@@ -19,10 +19,10 @@
         content="I've helped over 5,200 students speak with confidence and achieve their desired IELTS score. Let's reach your language goals together.">
     <meta property="og:title" content="COMEBACK ENGLISH | real learning">
     <meta property="og:description" content="I've helped over 5,200 students speak with confidence and achieve their desired IELTS score. Let's reach your language goals together.">
-    <meta property="og:image" content="https://res.cloudinary.com/dmskxohrr/image/upload/f_auto/v1769865345/hjo9kyoymjf81p4epkvj.jpg">
+    <meta property="og:image" content="https://res.cloudinary.com/dmskxohrr/image/upload/v1785486267/pqsd494rfbsa0jy3yunu.png">
     <meta property="og:url" content="https://comebackenglish.github.io/mahi/">
     <link rel="icon"
-        href="https://res.cloudinary.com/dmskxohrr/image/upload/f_auto/v1769865345/hjo9kyoymjf81p4epkvj.jpg"
+        href="https://res.cloudinary.com/dmskxohrr/image/upload/v1785486267/pqsd494rfbsa0jy3yunu.png"
         type="image/png">
     <script type="application/ld+json">
 {
@@ -30,7 +30,7 @@
   "@type": "Person",
   "name": "COMEBACK ENGLISH",
   "url": "https://comebackenglish.github.io/mahi/",
-  "image": "https://res.cloudinary.com/dmskxohrr/image/upload/f_auto/v1769865345/hjo9kyoymjf81p4epkvj.jpg",
+  "image": "https://res.cloudinary.com/dmskxohrr/image/upload/v1785486267/pqsd494rfbsa0jy3yunu.png",
   "description": "I've helped over 5,200 students speak with confidence and achieve their desired  score.",
   "sameAs": [
     "https://www.facebook.com/comebackenglish",
@@ -381,6 +381,7 @@
             .bento-course-card.reading-card { grid-column: span 3; min-height: 160px; }
             .bento-course-card.writing-card { grid-column: span 3; min-height: 160px; }
             .bento-course-card.basic-card { grid-column: span 3; min-height: 160px; }
+            .bento-course-card.evaluation-card { grid-column: span 6; min-height: 160px; }
         }
 
         /* --- Upcoming Batches Modal & Table --- */
@@ -2573,6 +2574,160 @@
             padding: 0.1rem 0.4rem;
             border-radius: 4px;
         }
+
+        /* --- Themed Course Detail Modals --- */
+        /* Pink Theme (Spoken English) */
+        .course-detail-modal-content.pink {
+            border-color: rgba(230, 0, 126, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(230, 0, 126, 0.25) !important;
+        }
+        .course-detail-modal-content.pink .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #ff66b2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.pink .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e6007e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.pink .batches-modal-btn {
+            background: linear-gradient(135deg, #e6007e 0%, #c2006a 100%);
+            box-shadow: 0 10px 25px rgba(230, 0, 126, 0.4);
+        }
+        .course-detail-modal-content.pink .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(230, 0, 126, 0.6);
+        }
+        .course-detail-modal-content.pink .batches-modal-close:hover {
+            background: var(--brand-pink);
+        }
+
+        /* Red Theme (Complete IELTS) */
+        .course-detail-modal-content.red {
+            border-color: rgba(227, 27, 35, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(227, 27, 35, 0.25) !important;
+        }
+        .course-detail-modal-content.red .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #ff4d4d 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.red .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e31b23' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.red .batches-modal-btn {
+            background: linear-gradient(135deg, #e31b23 0%, #990011 100%);
+            box-shadow: 0 10px 25px rgba(227, 27, 35, 0.4);
+        }
+        .course-detail-modal-content.red .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(227, 27, 35, 0.6);
+        }
+        .course-detail-modal-content.red .batches-modal-close:hover {
+            background: #e31b23;
+        }
+
+        /* Blue Theme (Reading for IELTS) */
+        .course-detail-modal-content.blue {
+            border-color: rgba(24, 119, 242, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(24, 119, 242, 0.25) !important;
+        }
+        .course-detail-modal-content.blue .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.blue .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231877F2' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.blue .batches-modal-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0a4b9e 100%);
+            box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+        }
+        .course-detail-modal-content.blue .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(24, 119, 242, 0.6);
+        }
+        .course-detail-modal-content.blue .batches-modal-close:hover {
+            background: #1877F2;
+        }
+
+        /* Black Theme (Writing for IELTS) */
+        .course-detail-modal-content.black {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 255, 255, 0.1) !important;
+        }
+        .course-detail-modal-content.black .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.black .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.black .batches-modal-btn {
+            background: linear-gradient(135deg, #2c2c2e 0%, #000000 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+        .course-detail-modal-content.black .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .course-detail-modal-content.black .batches-modal-close:hover {
+            background: #ffffff;
+            color: #000;
+        }
+
+        /* Orange Theme (Speaking & Writing Evaluation 1v1) */
+        .course-detail-modal-content.orange {
+            border-color: rgba(255, 142, 0, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 142, 0, 0.25) !important;
+        }
+        .course-detail-modal-content.orange .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #ffb703 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.orange .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff8e00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.orange .batches-modal-btn {
+            background: linear-gradient(135deg, #ff8e00 0%, #e65c00 100%);
+            box-shadow: 0 10px 25px rgba(255, 142, 0, 0.4);
+        }
+        .course-detail-modal-content.orange .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(255, 142, 0, 0.6);
+        }
+        .course-detail-modal-content.orange .batches-modal-close:hover {
+            background: #ff8e00;
+        }
+
+        /* Green Theme (Basic + IELTS) */
+        .course-detail-modal-content.green {
+            border-color: rgba(0, 176, 80, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 176, 80, 0.25) !important;
+        }
+        .course-detail-modal-content.green .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.green .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300b050' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.green .batches-modal-btn {
+            background: linear-gradient(135deg, #00b050 0%, #007020 100%);
+            box-shadow: 0 10px 25px rgba(0, 176, 80, 0.4);
+        }
+        .course-detail-modal-content.green .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(0, 176, 80, 0.6);
+        }
+        .course-detail-modal-content.green .batches-modal-close:hover {
+            background: #00b050;
+        }
     </style>
 </head>
 
@@ -2611,7 +2766,7 @@
                 <div class="profile-header">
                     <div class="avatar-wrapper">
                         <div class="avatar-ring"></div>
-                        <img src="https://res.cloudinary.com/dmskxohrr/image/upload/f_auto/v1769918372/c30ddn490qurtiwwig1t.jpg"
+                        <img src="https://res.cloudinary.com/dmskxohrr/image/upload/v1785486267/pqsd494rfbsa0jy3yunu.png"
                             alt="Mahi Ahmed Marjan" class="avatar-img" width="200" height="200" fetchpriority="high"
                             decoding="async">
                     </div>
@@ -2728,24 +2883,6 @@
         <section class="premium-white-section">
             <h2 class="premium-title reveal delay-1">Premium courses</h2>
 
-            <!-- Combo Offer Promo Box -->
-            <div class="combo-promo-box reveal delay-2">
-                <div class="combo-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                    Comeback Offer
-                </div>
-                <div class="combo-courses-badges">
-                    <span class="combo-course-badge badge-blue">Reading for IELTS</span>
-                    <span class="combo-course-badge badge-black">Writing for IELTS</span>
-                    <span class="combo-course-badge badge-orange">Speaking for IELTS</span>
-                </div>
-                <p class="combo-offer-text">
-                    যে কোনো দুইটি কোর্সে COMEBACK Journey শুরু করলেই <strong>20%</strong> off, আর তিনটা কোর্সে <strong>30%</strong> off!
-                </p>
-            </div>
-
             <div class="courses-bento-grid reveal delay-1">
                 <div class="bento-course-card pink spoken-card span-full" data-course="spoken">
                     <h3 class="bento-course-title">SPOKEN English</h3>
@@ -2753,10 +2890,6 @@
                 </div>
                 <div class="bento-course-card red complete-card span-full" data-course="complete">
                     <h3 class="bento-course-title">COMPLETE IELTS</h3>
-                    <span class="bento-card-action">View Details &rarr;</span>
-                </div>
-                <div class="bento-course-card orange speaking-card span-half" data-course="speaking">
-                    <h3 class="bento-course-title">SPEAKING for IELTS</h3>
                     <span class="bento-card-action">View Details &rarr;</span>
                 </div>
                 <div class="bento-course-card blue reading-card span-half" data-course="reading">
@@ -2767,8 +2900,8 @@
                     <h3 class="bento-course-title">WRITING for IELTS</h3>
                     <span class="bento-card-action">View Details &rarr;</span>
                 </div>
-                <div class="bento-course-card green basic-card span-half" data-course="basic">
-                    <h3 class="bento-course-title">Basic + IELTS</h3>
+                <div class="bento-course-card orange evaluation-card span-full" data-course="evaluation">
+                    <h3 class="bento-course-title">Speaking Test & Writing Evaluation (1v1)</h3>
                     <span class="bento-card-action">View Details &rarr;</span>
                 </div>
             </div>
@@ -3328,6 +3461,18 @@
                         <span class="price-new" style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: #fff;">৳2999</span>
                     `
                 },
+                evaluation: {
+                    title: "Speaking Test and Writing Evaluation (1v1)",
+                    subtitle: "One-on-one intensive evaluation & feedback for IELTS Speaking & Writing skills.",
+                    theme: "orange",
+                    features: [
+                        "Full Speaking Test with instant Feedback",
+                        "Full writing check (both Task 1 and Task 2) with feedback and strategies for achieving desired score"
+                    ],
+                    pricingHtml: `
+                        <span class="price-new" style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: #fff;">৳1499 BDT</span>
+                    `
+                },
                 basic: {
                     title: "Basic + IELTS",
                     subtitle: "এইখানে প্রথমে আপনাকে শিখানো হবে English for IELTS, অর্থাৎ যা যা ইংলিশ আপনি IELTS পরীক্ষা দেয়ার জন্য শিখা লাগবে তা প্রথমে শিখানো হবে। পরে শুরু হবে IELTS এর মেইন কোর্স। ৫ মাসে জিরো থেকে শুরু করে আপনাকে নিয়ে যাওয়া হবে আপনার ড্রিম স্কোর এর গন্তব্যে",
@@ -3382,25 +3527,7 @@
 
                     const modalContent = courseDetailModal.querySelector('.course-detail-modal-content');
                     modalContent.className = `batches-modal-content course-detail-modal-content ${data.theme}`;
-                    modalContent.style.borderColor = 'rgba(255, 255, 255, 0.08)';
-                    modalContent.style.boxShadow = '0 30px 70px rgba(0, 0, 0, 0.8)';
-                    
-                    if (data.theme === 'pink') {
-                        modalContent.style.borderColor = 'rgba(230, 0, 126, 0.3)';
-                        modalContent.style.boxShadow = '0 30px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 0, 126, 0.15)';
-                    } else if (data.theme === 'red') {
-                        modalContent.style.borderColor = 'rgba(227, 27, 35, 0.3)';
-                        modalContent.style.boxShadow = '0 30px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(227, 27, 35, 0.15)';
-                    } else if (data.theme === 'orange') {
-                        modalContent.style.borderColor = 'rgba(255, 142, 0, 0.3)';
-                        modalContent.style.boxShadow = '0 30px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 142, 0, 0.15)';
-                    } else if (data.theme === 'blue') {
-                        modalContent.style.borderColor = 'rgba(24, 119, 242, 0.3)';
-                        modalContent.style.boxShadow = '0 30px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(24, 119, 242, 0.15)';
-                    } else if (data.theme === 'green') {
-                        modalContent.style.borderColor = 'rgba(0, 176, 80, 0.3)';
-                        modalContent.style.boxShadow = '0 30px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 176, 80, 0.15)';
-                    }
+                    modalContent.removeAttribute('style');
 
                     courseDetailModal.classList.add('active');
                     document.body.style.overflow = 'hidden';
@@ -3591,60 +3718,23 @@
 
     <!-- Upcoming Batches Modal -->
     <div id="batchesModal" class="batches-modal">
-        <div class="batches-modal-content">
+        <div class="batches-modal-content" style="text-align: center; max-width: 500px; padding: 2.5rem 2rem;">
             <button id="batchesCloseBtn" class="batches-modal-close" aria-label="Close modal">&times;</button>
-            <h2 class="batches-modal-title">Upcoming Batches</h2>
-            <div class="batches-table-wrapper">
-                <table class="batches-table">
-                    <thead>
-                        <tr>
-                            <th>Course</th>
-                            <th>Date</th>
-                            <th>Schedule</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="batch-course-name">the IELTS course</td>
-                            <td class="batch-date-col">18 July</td>
-                            <td class="batch-time-col">Noon 2.00</td>
-                        </tr>
-                        <tr>
-                            <td class="batch-course-name">Spoken English course</td>
-                            <td class="batch-date-col">18 July</td>
-                            <td class="batch-time-col">Noon 12.00</td>
-                        </tr>
-                        <tr>
-                            <td class="batch-course-name">Basic + IELTS course</td>
-                            <td class="batch-date-col">18 July</td>
-                            <td class="batch-time-col">Noon 12.00</td>
-                        </tr>
-                        <tr>
-                            <td class="batch-course-name">Reading for IELTS</td>
-                            <td class="batch-date-col">5 July</td>
-                            <td class="batch-time-col">Morning 10.00</td>
-                        </tr>
-                        <tr>
-                            <td class="batch-course-name">Writing for IELTS</td>
-                            <td class="batch-date-col">5 July</td>
-                            <td class="batch-time-col">Morning 11.30</td>
-                        </tr>
-                        <tr>
-                            <td class="batch-course-name">Speaking for IELTS</td>
-                            <td class="batch-date-col">Always Open for Admission</td>
-                            <td class="batch-time-col">Night 8.30</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div style="width: 64px; height: 64px; background: rgba(37, 211, 102, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; color: #25D366;">
+                <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
             </div>
-            <div class="batches-modal-footer">
-                <a href="https://forms.gle/hEpkRMcK6F112ZF1A" target="_blank" rel="noopener noreferrer" class="batches-modal-btn">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right: 4px;">
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <polyline points="16 11 18 13 22 9"></polyline>
+            <h2 class="batches-modal-title" style="margin-bottom: 0.75rem; background: linear-gradient(to right, #fff, #25D366); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Upcoming Batches</h2>
+            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.75rem; font-weight: 500;">
+                For the schedule of our upcoming batches, please send us a direct message on WhatsApp.
+            </p>
+            <div class="batches-modal-footer" style="margin-top: 0;">
+                <a href="https://api.whatsapp.com/send?phone=8801309993730&text=Hello!%20I%20would%20like%20to%20know%20the%20schedule%20for%20the%20next%20batch." target="_blank" rel="noopener noreferrer" class="batches-modal-btn" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35); padding: 0.9rem 2.2rem; font-size: 1rem;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right: 6px;">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
-                    Book Your Seat Now
+                    Send Message on WhatsApp
                 </a>
             </div>
         </div>
