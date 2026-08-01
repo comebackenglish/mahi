@@ -299,9 +299,40 @@
             .header-batches-btn span {
                 white-space: nowrap;
             }
-            .toggle-option {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.75rem;
+
+            /* GPU & Scroll Performance Boost for Mobile Devices */
+            .glass-card,
+            .bento-card,
+            .feedback-card,
+            .resources-card,
+            .community-card,
+            .floating-nav,
+            .batches-modal-content {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+            }
+
+            [data-theme="dark"] .glass-card,
+            [data-theme="dark"] .bento-card,
+            [data-theme="dark"] .feedback-card,
+            [data-theme="dark"] .resources-card,
+            [data-theme="dark"] .community-card {
+                background: #0d111a !important;
+            }
+
+            [data-theme="dark"] .floating-nav {
+                background: rgba(13, 17, 26, 0.95) !important;
+            }
+
+            [data-theme="light"] .floating-nav {
+                background: rgba(255, 255, 255, 0.98) !important;
+            }
+
+            .mesh-blob {
+                animation: none !important;
+                filter: blur(40px) !important;
+                opacity: 0.25 !important;
             }
         }
 
@@ -3083,35 +3114,30 @@
         .toggle-option {
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.35rem 0.8rem;
-            border-radius: 100px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
             transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        [data-theme="light"] .toggle-option {
-            color: #64748b;
+            cursor: pointer;
         }
 
         [data-theme="dark"] .toggle-option.opt-dark {
             background: linear-gradient(135deg, var(--brand-pink) 0%, #d91c6e 100%);
-            color: #ffffff;
             box-shadow: 0 2px 10px rgba(255, 42, 133, 0.4);
         }
 
         [data-theme="light"] .toggle-option.opt-light {
             background: linear-gradient(135deg, #ff2a85 0%, #e01e72 100%);
-            color: #ffffff;
             box-shadow: 0 2px 10px rgba(255, 42, 133, 0.35);
         }
 
         .toggle-emoji {
-            font-size: 0.9rem;
+            font-size: 1.05rem;
             line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
     </style>
@@ -3136,8 +3162,8 @@
         </div>
         <div class="header-actions">
             <button id="themeToggleBtn" class="header-theme-toggle" aria-label="Toggle Light and Dark Theme">
-                <span class="toggle-option opt-light"><span class="toggle-emoji">☀️</span> Light</span>
-                <span class="toggle-option opt-dark"><span class="toggle-emoji">🌙</span> Dark</span>
+                <span class="toggle-option opt-light" title="Light Mode"><span class="toggle-emoji">☀️</span></span>
+                <span class="toggle-option opt-dark" title="Dark Mode"><span class="toggle-emoji">🌙</span></span>
             </button>
             <button id="upcomingBatchesBtn" class="header-batches-btn">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -3969,9 +3995,20 @@
             ];
 
             let particles = [];
-            const numParticles = 150;
+            const isMobileDevice = window.innerWidth <= 768;
+            const numParticles = isMobileDevice ? 35 : 120;
             let originX, originY;
             let width, height;
+
+            let isCanvasVisible = true;
+            if ('IntersectionObserver' in window && section) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        isCanvasVisible = entry.isIntersecting;
+                    });
+                }, { threshold: 0.05 });
+                observer.observe(section);
+            }
 
             const updateOrigin = () => {
                 if (originNode && section) {
@@ -4068,8 +4105,14 @@
 
             let lastTime = 0;
             const animate = (timestamp) => {
+                if (!isCanvasVisible) {
+                    requestAnimationFrame(animate);
+                    return;
+                }
+
                 if (!timestamp) timestamp = 0;
-                if (timestamp - lastTime < 16) {
+                const frameInterval = isMobileDevice ? 28 : 16;
+                if (timestamp - lastTime < frameInterval) {
                     requestAnimationFrame(animate);
                     return;
                 }
