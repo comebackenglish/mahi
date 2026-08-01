@@ -271,20 +271,37 @@
             display: block;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .brand-container {
+                display: none !important;
+            }
             .header-wrapper {
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.25rem;
                 padding: 0.5rem 0.2rem;
+                justify-content: space-between;
+                gap: 0.4rem;
+            }
+            .header-actions {
+                gap: 0.4rem;
             }
             .header-yt-btn {
-                padding: 0.6rem;
+                padding: 0.55rem;
+                flex-shrink: 0;
             }
             .header-yt-btn .btn-text {
                 display: none;
             }
             .header-batches-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
+                padding: 0.45rem 0.75rem;
+                font-size: 0.75rem;
+                flex-shrink: 0;
+            }
+            .header-batches-btn span {
+                white-space: nowrap;
+            }
+            .toggle-option {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
             }
         }
 
