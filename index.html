@@ -273,7 +273,10 @@
 
         @media (max-width: 768px) {
             .brand-container {
-                display: none !important;
+                display: flex !important;
+            }
+            .brand-text {
+                font-size: 1.6rem;
             }
             .header-wrapper {
                 margin-bottom: 1.25rem;
@@ -283,13 +286,6 @@
             }
             .header-actions {
                 gap: 0.4rem;
-            }
-            .header-yt-btn {
-                padding: 0.55rem;
-                flex-shrink: 0;
-            }
-            .header-yt-btn .btn-text {
-                display: none;
             }
             .header-batches-btn {
                 padding: 0.45rem 0.75rem;
@@ -381,6 +377,7 @@
         .bento-course-card.blue { background: linear-gradient(135deg, #1877F2 0%, #0a4b9e 100%); }
         .bento-course-card.black { background: linear-gradient(135deg, rgba(28, 28, 30, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%); }
         .bento-course-card.green { background: linear-gradient(135deg, #00b050 0%, #007020 100%); }
+        .bento-course-card.purple { background: linear-gradient(135deg, #7928CA 0%, #B800FF 100%); }
 
         .bento-course-card.pink:hover { box-shadow: 0 20px 40px rgba(255, 42, 133, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
         .bento-course-card.red:hover { box-shadow: 0 20px 40px rgba(227, 27, 35, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
@@ -388,6 +385,7 @@
         .bento-course-card.blue:hover { box-shadow: 0 20px 40px rgba(24, 119, 242, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
         .bento-course-card.black:hover { box-shadow: 0 20px 40px rgba(255, 255, 255, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1); }
         .bento-course-card.green:hover { box-shadow: 0 20px 40px rgba(0, 176, 80, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
+        .bento-course-card.purple:hover { box-shadow: 0 20px 40px rgba(184, 0, 255, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
 
         .bento-course-title {
             font-family: var(--font-display);
@@ -426,6 +424,7 @@
             }
             .bento-course-card.spoken-card { grid-column: span 2; min-height: 160px; }
             .bento-course-card.complete-card { grid-column: span 4; min-height: 160px; }
+            .bento-course-card.intensive-card { grid-column: span 6; min-height: 160px; }
             .bento-course-card.speaking-card { grid-column: span 3; min-height: 160px; }
             .bento-course-card.reading-card { grid-column: span 3; min-height: 160px; }
             .bento-course-card.writing-card { grid-column: span 3; min-height: 160px; }
@@ -2769,6 +2768,201 @@
         }
         .course-detail-modal-content.green .batches-modal-btn {
             background: linear-gradient(135deg, #00b050 0%, #007020 100%);
+        .combo-course-badge {
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease;
+        }
+
+        .combo-course-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .combo-course-badge.badge-blue {
+            background: linear-gradient(135deg, #1877F2 0%, #0a4b9e 100%);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.25);
+        }
+
+        .combo-course-badge.badge-black {
+            background: linear-gradient(135deg, #1c1c1e 0%, #000000 100%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .combo-course-badge.badge-orange {
+            background: linear-gradient(135deg, #ff8e00 0%, #e65c00 100%);
+            box-shadow: 0 4px 12px rgba(255, 142, 0, 0.25);
+        }
+
+        .combo-offer-text {
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            color: #2b2b2e;
+            font-weight: 600;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        .combo-offer-text strong {
+            color: var(--brand-pink);
+            font-weight: 800;
+            font-size: 1.1em;
+            background: linear-gradient(120deg, rgba(255, 42, 133, 0.1) 0%, rgba(255, 42, 133, 0.05) 100%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* --- Themed Course Detail Modals --- */
+        /* Pink Theme (Spoken English) */
+        .course-detail-modal-content.pink {
+            border-color: rgba(255, 42, 133, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 42, 133, 0.25) !important;
+        }
+        .course-detail-modal-content.pink .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #ff66b2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.pink .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff2a85' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.pink .batches-modal-btn {
+            background: linear-gradient(135deg, #ff2a85 0%, #d9006c 100%);
+            box-shadow: 0 10px 25px rgba(255, 42, 133, 0.4);
+        }
+        .course-detail-modal-content.pink .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(255, 42, 133, 0.6);
+        }
+        .course-detail-modal-content.pink .batches-modal-close:hover {
+            background: var(--brand-pink);
+        }
+
+        /* Red Theme (Complete IELTS) */
+        .course-detail-modal-content.red {
+            border-color: rgba(227, 27, 35, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(227, 27, 35, 0.25) !important;
+        }
+        .course-detail-modal-content.red .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #ff4d4d 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.red .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e31b23' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.red .batches-modal-btn {
+            background: linear-gradient(135deg, #e31b23 0%, #990011 100%);
+            box-shadow: 0 10px 25px rgba(227, 27, 35, 0.4);
+        }
+        .course-detail-modal-content.red .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(227, 27, 35, 0.6);
+        }
+        .course-detail-modal-content.red .batches-modal-close:hover {
+            background: #e31b23;
+        }
+
+        /* Blue Theme (Reading for IELTS) */
+        .course-detail-modal-content.blue {
+            border-color: rgba(24, 119, 242, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(24, 119, 242, 0.25) !important;
+        }
+        .course-detail-modal-content.blue .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.blue .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231877F2' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.blue .batches-modal-btn {
+            background: linear-gradient(135deg, #1877F2 0%, #0a4b9e 100%);
+            box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+        }
+        .course-detail-modal-content.blue .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(24, 119, 242, 0.6);
+        }
+        .course-detail-modal-content.blue .batches-modal-close:hover {
+            background: #1877F2;
+        }
+
+        /* Black Theme (Writing for IELTS) */
+        .course-detail-modal-content.black {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 255, 255, 0.1) !important;
+        }
+        .course-detail-modal-content.black .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.black .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.black .batches-modal-btn {
+            background: linear-gradient(135deg, #2c2c2e 0%, #000000 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+        .course-detail-modal-content.black .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .course-detail-modal-content.black .batches-modal-close:hover {
+            background: #ffffff;
+            color: #000;
+        }
+
+        /* Orange Theme (Speaking & Writing Evaluation 1v1) */
+        .course-detail-modal-content.orange {
+            border-color: rgba(255, 142, 0, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 142, 0, 0.25) !important;
+        }
+        .course-detail-modal-content.orange .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #ffb703 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.orange .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff8e00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.orange .batches-modal-btn {
+            background: linear-gradient(135deg, #ff8e00 0%, #e65c00 100%);
+            box-shadow: 0 10px 25px rgba(255, 142, 0, 0.4);
+        }
+        .course-detail-modal-content.orange .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(255, 142, 0, 0.6);
+        }
+        .course-detail-modal-content.orange .batches-modal-close:hover {
+            background: #ff8e00;
+        }
+
+        /* Green Theme (Basic + IELTS) */
+        .course-detail-modal-content.green {
+            border-color: rgba(0, 176, 80, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 176, 80, 0.25) !important;
+        }
+        .course-detail-modal-content.green .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #4ade80 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.green .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300b050' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.green .batches-modal-btn {
+            background: linear-gradient(135deg, #00b050 0%, #007020 100%);
             box-shadow: 0 10px 25px rgba(0, 176, 80, 0.4);
         }
         .course-detail-modal-content.green .batches-modal-btn:hover {
@@ -2776,6 +2970,31 @@
         }
         .course-detail-modal-content.green .batches-modal-close:hover {
             background: #00b050;
+        }
+
+        /* Purple Theme (IELTS Intensive) */
+        .course-detail-modal-content.purple {
+            border-color: rgba(184, 0, 255, 0.35) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(184, 0, 255, 0.25) !important;
+        }
+        .course-detail-modal-content.purple .batches-modal-title {
+            background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .course-detail-modal-content.purple .course-features li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b800ff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        .course-detail-modal-content.purple .batches-modal-btn {
+            background: linear-gradient(135deg, #7928CA 0%, #B800FF 100%);
+            box-shadow: 0 10px 25px rgba(184, 0, 255, 0.4);
+        }
+        .course-detail-modal-content.purple .batches-modal-btn:hover {
+            box-shadow: 0 15px 35px rgba(184, 0, 255, 0.6);
+        }
+        .course-detail-modal-content.purple .batches-modal-close:hover {
+            background: #b800ff;
         }
     
         /* --- Dual Theme Support: Dark (Pink & Black) & Light (Pink & White) --- */
@@ -2997,6 +3216,12 @@
             background-clip: text !important;
             -webkit-text-fill-color: transparent !important;
         }
+        [data-theme="light"] .course-detail-modal-content.purple .batches-modal-title {
+            background: linear-gradient(135deg, #0f172a 0%, #7928CA 100%) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
 
         [data-theme="light"] .course-subtitle {
             color: #334155 !important;
@@ -3151,28 +3376,10 @@
     </div>
     <div class="noise-overlay"></div>
     <header class="header-wrapper">
-        <div class="header-yt-group" style="display: inline-flex; align-items: center; gap: 0.4rem;">
-            <a href="https://www.youtube.com/@ComebackEnglish" class="header-yt-btn" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel - Comeback English" title="Comeback English YouTube">
-                <svg viewBox="0 0 24 24" width="20" height="20">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span class="btn-text">English</span>
-            </a>
-            <a href="https://www.youtube.com/@comebackielts" class="header-yt-btn" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel - Comeback IELTS" title="Comeback IELTS YouTube">
-                <svg viewBox="0 0 24 24" width="20" height="20">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-                <span class="btn-text">IELTS</span>
-            </a>
-        </div>
         <div class="brand-container">
             <span class="brand-text">COMEBACK</span>
         </div>
         <div class="header-actions">
-            <button id="themeToggleBtn" class="header-theme-toggle" aria-label="Toggle Light and Dark Theme">
-                <span class="toggle-option opt-light" title="Light Mode"><span class="toggle-emoji">☀️</span></span>
-                <span class="toggle-option opt-dark" title="Dark Mode"><span class="toggle-emoji">🌙</span></span>
-            </button>
             <button id="upcomingBatchesBtn" class="header-batches-btn">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -3225,7 +3432,8 @@
                         </svg>
                     </div>
                     <div class="stat-info">
-                        <span class="stat-value">IELTS 8.0</span>
+                        <span class="stat-value">8.0</span>
+                        <span class="stat-label"> Score (2022)</span>
                     </div>
                 </div>
                 <div class="stat-group">
@@ -3317,6 +3525,10 @@
                     <h3 class="bento-course-title">COMPLETE IELTS</h3>
                     <span class="bento-card-action">View Details &rarr;</span>
                 </div>
+                <div class="bento-course-card purple intensive-card span-full" data-course="intensive">
+                    <h3 class="bento-course-title">IELTS Intensive</h3>
+                    <span class="bento-card-action">View Details &rarr;</span>
+                </div>
                 <div class="bento-course-card blue reading-card span-half" data-course="reading">
                     <h3 class="bento-course-title">READING for IELTS</h3>
                     <span class="bento-card-action">View Details &rarr;</span>
@@ -3382,20 +3594,6 @@
                 </div>
                 <hr class="separator">
                 <div class="social-dock">
-                    <a href="https://www.youtube.com/@ComebackEnglish" class="dock-item di-yt delay-v-1" target="_blank"
-                        rel="noopener noreferrer" aria-label="YouTube Comeback English" title="Comeback English YouTube">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/@comebackielts" class="dock-item di-yt delay-v-1" target="_blank"
-                        rel="noopener noreferrer" aria-label="YouTube Comeback IELTS" title="Comeback IELTS YouTube">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
                     <a href="https://www.facebook.com/comebackenglish" class="dock-item di-fb delay-v-2" target="_blank"
                         rel="noopener noreferrer" aria-label="Facebook">
                         <svg viewBox="0 0 24 24">
@@ -3457,7 +3655,6 @@
     <!-- Modern Interactions Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Scroll Reveals (Intersection Observer)
             const revealElements = document.querySelectorAll('.reveal');
 
             // Dynamically adjust rootMargin based on screen size for better mobile triggering
@@ -3836,6 +4033,31 @@
                             <div class="price-layer comeback" style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); margin-top: 0.2rem; border: 1px dashed rgba(255, 42, 133, 0.35); box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%;">
                                 <span class="price-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Comeback Offer</span>
                                 <span class="price-value price-comeback" style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 800;">৳6,999</span>
+                            </div>
+                        </div>
+                    `
+                },
+                intensive: {
+                    title: "IELTS Intensive",
+                    subtitle: "DAILY Practice before exam",
+                    theme: "purple",
+                    features: [
+                        "Speaking practice and test",
+                        "Reading solving & mistakes analysis",
+                        "Writing evaluation & feedback",
+                        "Listening test & mistakes analysis",
+                        "Premium materials for overall improvement",
+                        "One-to-one support"
+                    ],
+                    pricingHtml: `
+                        <div class="price-three-layers" style="border: none; padding: 0; width: 100%; display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0;">
+                            <div class="price-layer regular" style="display: flex; justify-content: space-between; align-items: center; opacity: 0.6; font-size: 0.95rem;">
+                                <span class="price-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Regular Price</span>
+                                <span class="price-value price-old" style="text-decoration: line-through;">৳3,000</span>
+                            </div>
+                            <div class="price-layer comeback" style="display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm); margin-top: 0.2rem; border: 1px dashed rgba(184, 0, 255, 0.4); box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%;">
+                                <span class="price-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">50% Discount</span>
+                                <span class="price-value price-comeback" style="font-family: var(--font-display); font-size: 1.45rem; font-weight: 800;">৳1,500</span>
                             </div>
                         </div>
                     `
