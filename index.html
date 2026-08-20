@@ -1654,113 +1654,41 @@
             left: 200%;
         }
 
-        /* Bottom Grid: Resources & Community */
+        /* Bottom Grid: Connect */
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
+            max-width: 680px;
+            margin: 0 auto;
+            width: 100%;
         }
 
-        @media (min-width: 968px) {
-            .bottom-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* Resources */
-        .resources-card {
-            padding: 1.5rem;
-        }
-
-        .resources-card:hover {
-            border-color: rgba(255, 142, 0, 0.4);
-            box-shadow: 0 20px 40px -4px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 142, 0, 0.2);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .card-title {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .grid-menu {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .resource-item {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 1);
-            padding: 1.25rem;
-            border-radius: var(--radius-md);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.8rem;
-            text-decoration: none;
-            transition: all 0.3s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .resource-item:hover {
-            background: var(--brand-pink);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 42, 133, 0.3);
-            border-color: transparent;
-        }
-
-        .resource-item:hover .res-label {
-            color: #fff;
-        }
-
-        .res-icon {
-            width: 32px;
-            height: 32px;
-            transition: transform 0.3s, filter 0.3s;
-            /* Filter for var(--brand-pink) #ff2a85 on white background */
-            filter: brightness(0) saturate(100%) invert(21%) sepia(85%) saturate(4649%) hue-rotate(317deg) brightness(97%) contrast(100%);
-        }
-
-        .resource-item:hover .res-icon {
-            transform: scale(1.1) rotate(-5deg);
-            /* Reset filter to white on hover */
-            filter: brightness(0) invert(1);
-        }
-
-        .res-label {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--brand-pink);
-            line-height: 1.2;
-            transition: color 0.3s;
-        }
-
-        /* Community Section */
+        /* Community / Connect Section */
         .community-card {
-            padding: 1.5rem;
+            padding: 1.75rem 1.5rem;
             position: relative;
-        }
-
-        .community-card {
             background-image: 
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 100 C 40 80, 60 20, 100 0' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='0.5'/%3E%3C/svg%3E"),
                 linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
             background-size: 100% 100%, 100% 100%;
             background-repeat: no-repeat;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
         }
 
         .section-label {
@@ -1776,161 +1704,70 @@
             z-index: 2;
         }
 
-        .join-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .social-btn-lg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.2s var(--ease-spring), filter 0.2s;
-        }
-
-        .social-btn-lg:hover {
-            transform: scale(1.03);
-            filter: brightness(1.1);
-        }
-
-        .social-btn-lg svg {
-            width: 22px;
-            height: 22px;
-            fill: white;
-        }
-
-        .btn-fb {
-            background: var(--social-fb);
-            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
-        }
-
-        .btn-wa {
-            background: var(--social-wa);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
         .separator {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
             border: none;
-            margin: 0 0 1.5rem 0;
+            margin: 2rem 0 1.5rem 0;
             position: relative;
             z-index: 2;
         }
 
-        /* Social Row */
-        .social-dock {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 0.75rem 1.5rem;
-            border-radius: 100px;
-            border: 1px solid var(--glass-border);
-            width: fit-content;
-            margin: 0 auto;
+        /* Social Text Grid & Buttons */
+        .social-text-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.85rem;
+            margin-bottom: 1.5rem;
             position: relative;
             z-index: 2;
         }
 
-        .dock-item {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
+        @media (min-width: 520px) {
+            .social-text-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .social-text-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.3s var(--ease-spring);
-            position: relative;
+            color: #ffffff;
+            transition: transform 0.2s var(--ease-spring), box-shadow 0.2s, filter 0.2s;
+            text-align: center;
         }
 
-        .dock-item svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-            z-index: 2;
+        .social-text-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
         }
 
-        .dock-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: 1;
+        .social-text-btn.btn-fb {
+            background: #1877F2;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
         }
 
-        .dock-item:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .dock-item:hover::before {
-            opacity: 1;
-        }
-
-        .di-fb {
-            background: var(--social-fb);
-            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
-        }
-
-        .di-fb:hover {
-            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.5);
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .di-ig {
-            background: #d62976;
+        .social-text-btn.btn-ig {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.3);
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
         }
 
-        .di-ig:hover {
-            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.5);
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .di-tk {
-            background: #000;
-            border: 1px solid var(--social-tk);
-            box-shadow: 0 5px 15px rgba(0, 242, 234, 0.3);
-        }
-
-        .di-tk:hover {
-            box-shadow: 2px 2px 0 var(--social-tk), -2px -2px 0 #ff0050;
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .di-tg {
+        .social-text-btn.btn-tg {
             background: #229ED9;
-            box-shadow: 0 4px 10px rgba(34, 158, 217, 0.1);
+            box-shadow: 0 4px 15px rgba(34, 158, 217, 0.3);
         }
 
-        .di-tg:hover {
-            box-shadow: 0 5px 15px rgba(34, 158, 217, 0.3);
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .di-yt {
-            background: var(--social-yt);
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
-        }
-
-        .di-yt:hover {
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.6);
-            transform: translateY(-5px) scale(1.1);
+        .social-text-btn.btn-tk {
+            background: #010101;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
         /* Mobile Responsive */
@@ -3273,34 +3110,7 @@
             color: var(--brand-pink) !important;
         }
 
-        /* Download PDFs Resource Cards High Contrast in Light Mode */
-        [data-theme="light"] .resources-card {
-            background: #ffffff !important;
-        }
 
-        [data-theme="light"] .resources-card .card-header {
-            border-bottom-color: rgba(255, 42, 133, 0.15) !important;
-        }
-
-        [data-theme="light"] .resource-item {
-            background: #f1f5f9 !important;
-            border: 1px solid rgba(255, 42, 133, 0.22) !important;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03) !important;
-        }
-
-        [data-theme="light"] .resource-item:hover {
-            background: var(--brand-pink) !important;
-            border-color: transparent !important;
-            box-shadow: 0 10px 25px rgba(255, 42, 133, 0.35) !important;
-        }
-
-        [data-theme="light"] .resource-item:hover .res-label {
-            color: #ffffff !important;
-        }
-
-        [data-theme="light"] .resource-item:hover .res-icon {
-            filter: brightness(0) invert(1) !important;
-        }
 
         /* Header Theme Switcher Pill Toggle Styling */
         .header-actions {
@@ -3545,82 +3355,20 @@
         </section>
         <!-- Bottom Sections -->
         <div class="bottom-grid content-vis">
-            <!-- Resources -->
-            <section class="glass-card resources-card reveal tilt-target">
-                <div class="card-header">
-                    <div class="card-title">Download PDFs</div>
-                </div>
-                <div class="grid-menu">
-                    <a href="https://drive.google.com/drive/folders/1SK3hCqkA9lGxuEgdAfc9bZurw5tc8jhG?usp=sharing"
-                        class="resource-item" target="_blank" rel="noopener noreferrer">
-                        <img src="https://res.cloudinary.com/dmskxohrr/image/upload/v1769920083/writing.svg"
-                            class="res-icon" alt="Writing" loading="lazy" decoding="async">
-                        <span class="res-label">Writing</span>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1na7Kb6ITua_sI-1ruPI93eENupyJUdmc?usp=sharing"
-                        class="resource-item delay-v-1" target="_blank" rel="noopener noreferrer">
-                        <img src="https://res.cloudinary.com/dmskxohrr/image/upload/v1769920083/reading.svg"
-                            class="res-icon" alt="Reading" loading="lazy" decoding="async">
-                        <span class="res-label">Reading</span>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1uHwARv-wga8kSHZhz8DhJ57TwH1Z2izo?usp=sharing"
-                        class="resource-item delay-v-2" target="_blank" rel="noopener noreferrer">
-                        <img src="https://res.cloudinary.com/dmskxohrr/image/upload/v1769920083/speaking.svg"
-                            class="res-icon" alt="Speaking" loading="lazy" decoding="async">
-                        <span class="res-label">Speaking</span>
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/1uh9X8-pcXhxwtrONSd3Z2DQyGHy520xL?usp=sharing"
-                        class="resource-item delay-v-3" target="_blank" rel="noopener noreferrer">
-                        <img src="https://res.cloudinary.com/dmskxohrr/image/upload/v1769920083/support%20materials.svg"
-                            class="res-icon" alt="Spoken" loading="lazy" decoding="async">
-                        <span class="res-label">Basics</span>
-                    </a>
-                </div>
-            </section>
-            <!-- Community -->
+            <!-- Community / Connect -->
             <section class="glass-card community-card reveal delay-1 tilt-target">
                 <div class="card-header">
                     <div class="card-title">Connect</div>
                 </div>
-                <div class="join-grid">
-                    <a href="https://www.facebook.com/share/g/1HKtCj4j95/" class="social-btn-lg btn-fb" target="_blank"
-                        rel="noopener noreferrer">
-                        Facebook Group
-                    </a>
-                    <a href="https://chat.whatsapp.com/ICkfdopDsiGIxNUvu4KN16?mode=gi_t" class="social-btn-lg btn-wa"
-                        target="_blank" rel="noopener noreferrer">
-                        WhatsApp Community
-                    </a>
-                </div>
-                <hr class="separator">
-                <div class="social-dock">
-                    <a href="https://www.facebook.com/comebackenglish" class="dock-item di-fb delay-v-2" target="_blank"
-                        rel="noopener noreferrer" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/comebackenglish/" class="dock-item di-ig delay-v-3"
-                        target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.tiktok.com/@comebackenglish" class="dock-item di-tk delay-v-4" target="_blank"
-                        rel="noopener noreferrer" aria-label="TikTok">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                        </svg>
-                    </a>
-                    <a href="https://t.me/comebackenglish" class="dock-item di-tg delay-v-4" target="_blank"
-                        rel="noopener noreferrer" aria-label="Telegram">
-                        <svg viewBox="0 0 32 32">
-                            <path fill="currentColor"
-                                d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z" />
-                        </svg>
-                    </a>
+                <div class="social-text-grid">
+                    <a href="https://www.facebook.com/comebackenglish" class="social-text-btn btn-fb" target="_blank"
+                        rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.instagram.com/comebackenglish/" class="social-text-btn btn-ig" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    <a href="https://t.me/comebackenglish" class="social-text-btn btn-tg" target="_blank"
+                        rel="noopener noreferrer">Telegram</a>
+                    <a href="https://www.tiktok.com/@comebackenglish" class="social-text-btn btn-tk" target="_blank"
+                        rel="noopener noreferrer">TikTok</a>
                 </div>
                 <hr class="separator" style="margin-top: 1.5rem;">
                 <div class="contact-info"
@@ -4461,7 +4209,7 @@
             <a href="#hero" class="nav-tab active" data-target="hero">comeback</a>
             <a href="#students-love" class="nav-tab" data-target="students-love">feedback</a>
             <a href="#courses" class="nav-tab" data-target="courses">courses</a>
-            <a href="#resources" class="nav-tab" data-target="resources">resources</a>
+            <a href="#resources" class="nav-tab" data-target="resources">connect</a>
         </div>
     </nav>
 
