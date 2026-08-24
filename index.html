@@ -348,73 +348,92 @@
         }
 
         .bento-course-card {
-            border-radius: 28px;
-            padding: 1.1rem 1.25rem;
+            border-radius: 30px;
+            padding: 1.15rem 1.4rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            min-height: 80px;
+            gap: 1.1rem;
+            min-height: 84px;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-            transition: transform 0.4s var(--ease-spring), border-color 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
         .bento-course-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 65%);
+            background: radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.22), transparent 70%);
             pointer-events: none;
             z-index: 1;
         }
 
-        .bento-course-card:hover {
-            transform: translateY(-4px) scale(1.015);
-            border-color: rgba(255, 255, 255, 0.35);
+        .bento-course-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.12) 50%, transparent 55%);
+            transform: rotate(30deg) translateY(-100%);
+            transition: transform 0.8s ease;
+            pointer-events: none;
+            z-index: 2;
         }
 
-        .bento-course-card.pink { background: linear-gradient(135deg, rgba(255, 42, 133, 0.95) 0%, rgba(194, 0, 106, 0.98) 100%); }
-        .bento-course-card.red { background: linear-gradient(135deg, #e31b23 0%, #990011 100%); }
-        .bento-course-card.orange { background: linear-gradient(135deg, #ff8e00 0%, #e65c00 100%); }
-        .bento-course-card.blue { background: linear-gradient(135deg, #1877F2 0%, #0a4b9e 100%); }
-        .bento-course-card.black { background: linear-gradient(135deg, rgba(32, 32, 36, 0.95) 0%, rgba(12, 12, 16, 0.98) 100%); }
-        .bento-course-card.green { background: linear-gradient(135deg, #00b050 0%, #007020 100%); }
-        .bento-course-card.purple { background: linear-gradient(135deg, #7928CA 0%, #B800FF 100%); }
+        .bento-course-card:hover::after {
+            transform: rotate(30deg) translateY(100%);
+        }
 
-        .bento-course-card.pink:hover { box-shadow: 0 16px 36px rgba(255, 42, 133, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
-        .bento-course-card.red:hover { box-shadow: 0 16px 36px rgba(227, 27, 35, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
-        .bento-course-card.orange:hover { box-shadow: 0 16px 36px rgba(255, 142, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
-        .bento-course-card.blue:hover { box-shadow: 0 16px 36px rgba(24, 119, 242, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
-        .bento-course-card.black:hover { box-shadow: 0 16px 36px rgba(255, 255, 255, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.2); }
-        .bento-course-card.green:hover { box-shadow: 0 16px 36px rgba(0, 176, 80, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
-        .bento-course-card.purple:hover { box-shadow: 0 16px 36px rgba(184, 0, 255, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
+        .bento-course-card:hover {
+            transform: translateY(-5px) scale(1.018);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
 
-        /* Notification Icon Badge */
+        .bento-course-card.pink { background: linear-gradient(135deg, rgba(255, 42, 133, 0.96) 0%, rgba(184, 0, 98, 0.98) 100%); }
+        .bento-course-card.red { background: linear-gradient(135deg, #ea1d27 0%, #8f000e 100%); }
+        .bento-course-card.orange { background: linear-gradient(135deg, #ff9204 0%, #db5500 100%); }
+        .bento-course-card.blue { background: linear-gradient(135deg, #1b7cf6 0%, #084393 100%); }
+        .bento-course-card.black { background: linear-gradient(135deg, rgba(36, 36, 42, 0.98) 0%, rgba(10, 10, 14, 0.99) 100%); }
+        .bento-course-card.green { background: linear-gradient(135deg, #00b853 0%, #00661c 100%); }
+        .bento-course-card.purple { background: linear-gradient(135deg, #7e24d4 0%, #b800ff 100%); }
+
+        .bento-course-card.pink:hover { box-shadow: 0 20px 45px rgba(255, 42, 133, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.3); }
+        .bento-course-card.red:hover { box-shadow: 0 20px 45px rgba(227, 27, 35, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.3); }
+        .bento-course-card.orange:hover { box-shadow: 0 20px 45px rgba(255, 142, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.3); }
+        .bento-course-card.blue:hover { box-shadow: 0 20px 45px rgba(24, 119, 242, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.3); }
+        .bento-course-card.black:hover { box-shadow: 0 20px 45px rgba(255, 255, 255, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.25); }
+        .bento-course-card.green:hover { box-shadow: 0 20px 45px rgba(0, 176, 80, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.3); }
+        .bento-course-card.purple:hover { box-shadow: 0 20px 45px rgba(184, 0, 255, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.3); }
+
+        /* Notification Icon Badge (3D Depth) */
         .course-card-icon-wrap {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
             border-radius: 50%;
             background: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-            transition: transform 0.3s var(--ease-spring);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22), inset 0 -2px 4px rgba(0, 0, 0, 0.08);
+            z-index: 3;
+            transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease;
         }
 
         .bento-course-card:hover .course-card-icon-wrap {
-            transform: scale(1.08);
+            transform: scale(1.1) rotate(-3deg);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .course-card-icon {
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             object-fit: contain;
         }
 
@@ -427,61 +446,67 @@
             text-align: left;
             flex: 1;
             min-width: 0;
-            z-index: 2;
+            z-index: 3;
         }
 
         .bento-course-title {
             font-family: var(--font-display);
-            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             font-weight: 800;
             text-transform: uppercase;
-            color: #fff;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-            margin-bottom: 0.2rem;
-            z-index: 2;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+            margin-bottom: 0.18rem;
+            z-index: 3;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             width: 100%;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .bento-card-action {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: none;
-            letter-spacing: 0.3px;
-            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.2px;
+            color: rgba(255, 255, 255, 0.88);
             transition: color 0.3s ease, transform 0.3s ease;
-            z-index: 2;
+            z-index: 3;
             display: flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.3rem;
         }
 
         .bento-course-card:hover .bento-card-action {
             color: #ffffff;
         }
 
-        /* Chevron Icon on Right */
+        /* Chevron Icon on Right (Interactive Glass Circle) */
         .course-card-chevron {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2;
-            transition: all 0.3s var(--ease-spring);
+            z-index: 3;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.4s var(--ease-spring);
         }
 
         .bento-course-card:hover .course-card-chevron {
-            background: rgba(255, 255, 255, 0.28);
-            color: #ffffff;
-            transform: translateX(3px);
+            background: #ffffff;
+            color: #050507;
+            border-color: #ffffff;
+            transform: translateX(4px) scale(1.05);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
         }
 
         /* --- Upcoming Batches Modal & Table --- */
